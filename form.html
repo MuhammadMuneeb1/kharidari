@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login/Signup Page</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        width: 400px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .container input[type="text"],
+      .container input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      .container input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      .container input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      .container p {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .container .signup-link {
+        text-align: center;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Login/Signup</h2>
+      <form id="loginForm">
+        <input type="text" name="username" placeholder="Username" required />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <input type="submit" value="Login" />
+        <p>Don't have an account? <a href="#" id="signupLink">Sign up</a></p>
+      </form>
+      <form id="signupForm" style="display: none">
+        <input type="text" name="username" placeholder="Username" required />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <input
+          type="password"
+          name="confirm_password"
+          placeholder="Confirm Password"
+          required
+        />
+        <input type="submit" value="Sign up" />
+        <p>Already have an account? <a href="#" id="loginLink">Login</a></p>
+      </form>
+    </div>
+
+    <script>
+      const loginForm = document.getElementById("loginForm");
+      const signupForm = document.getElementById("signupForm");
+      const loginLink = document.getElementById("loginLink");
+      const signupLink = document.getElementById("signupLink");
+
+      loginLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        loginForm.style.display = "block";
+        signupForm.style.display = "none";
+      });
+
+      signupLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        loginForm.style.display = "none";
+        signupForm.style.display = "block";
+      });
+    </script>
+  </body>
+</html>
